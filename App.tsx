@@ -1,11 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { WebView } from "react-native-webview";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <StatusBar hidden />
+      <WebView
+        source={{ uri: "https://chopwella-base.vercel.app/" }}
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+        mediaPlaybackRequiresUserAction={false}
+        originWhitelist={["*"]}
+        useWebKit={true}
+        allowsInlineMediaPlayback={true}
+        allowsProtectedMedia={true}
+        onPermissionRequest={(event: any) => {
+          // only works in custom native modules, not Expo Managed
+        }}
+      />
     </View>
   );
 }
@@ -13,8 +27,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

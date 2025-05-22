@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "chopwella-booth",
-    "slug": "chopwella-booth",
+    "name": "Lcu Feeding",
+    "slug": "lcu-feeding",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,7 +19,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vulpeslabs.lcufeeding"
+    },
+    "androidStatusBar": {
+      "visible": true,
+      "translucent": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
